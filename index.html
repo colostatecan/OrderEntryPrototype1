@@ -58,10 +58,183 @@
     <label>Enter your first and last name</label>
     <input type="text" placeholder="Enter your full name">
 
+    <label>What type of thing do you need?</label>
+    <select>
+      <option>Physical Goods/Tangible Items (Equipment (e.g., lab tools, machinery, electronics))</option>
+      <option>Office supplies (e.g., pens, paper, chairs)</option>
+      <option>Furniture</option>
+      <option>Clothing and apparel</option>
+      <option>Food and beverages</option>
+      <option>Books and publications</option>
+      <option>Raw materials and components</option>
+      <option>Technology hardware (e.g., laptops, monitors)</option>
+      <option>Services (Professional services (consulting, legal, marketing))</option>
+      <option>Freelance or contract work (designers, writers, developers)</option>
+      <option>Maintenance or repair services</option>
+      <option>Cleaning or janitorial services</option>
+      <option>Training, coaching, or tutoring</option>
+      <option>Catering or event services</option>
+      <option>Digital Products (Software licenses and subscriptions)</option>
+      <option>Mobile apps</option>
+      <option>eBooks, PDFs, or digital publications</option>
+      <option>Media (music, movies, photos)</option>
+      <option>Design assets (fonts, templates, stock photos)</option>
+      <option>Access/Usage Rights (Subscriptions (newsletters, tools, memberships))</option>
+      <option>Streaming platforms (e.g., Netflix, Spotify)</option>
+      <option>Cloud storage or hosting</option>
+      <option>Venue or space rentals</option>
+      <option>Equipment rentals</option>
+      <option>Travel/Hospitality (Flights, train tickets, rideshare services)</option>
+      <option>Hotel or lodging bookings</option>
+      <option>Per diem or travel stipends</option>
+      <option>Conference registrations</option>
+      <option>Experiences (Workshops and classes)</option>
+      <option>Event tickets (concerts, shows, sports)</option>
+      <option>Recreational activities (tours, team-building experiences)</option>
+      <option>Intellectual Property/Licensing (Patents, copyrights, trademarks)</option>
+      <option>Software/API usage rights</option>
+      <option>Data sets or research licenses</option>
+      <option>Financial Transactions (Insurance premiums, Taxes and regulatory fees, Payment processing fees, Donations or sponsorships)</option>
+      <option>Something Else</option>
+    </select>
+
+    <label>When is what you want needed?</label>
+    <select>
+      <option>Today</option>
+      <option>This Week</option>
+      <option>Next Week</option>
+      <option>This Month</option>
+      <option>Next Month</option>
+      <option>This Semester</option>
+      <option>Next Semester</option>
+      <option>Ongoing</option>
+    </select>
+
+    <label>What are the required specs?</label>
+    <select id="specsSelect">
+      <option>Dimensions (height, width, depth, diameter, etc)</option>
+      <option>Weight or Volume</option>
+      <option>Material Type (plastic, metal, wood, etc)</option>
+      <option>Finish or Color</option>
+      <option>Brand or Manufacturer</option>
+      <option>Model Number</option>
+      <option>Performance Criteria (speed, capacity, wattage)</option>
+      <option>Safety or Compliance Features</option>
+      <option>Compatibility or Fit Requirements</option>
+      <option>Other</option>
+      <option>N/A</option>
+    </select>
+
+    <div id="specDetailSection" class="conditional">
+      <label>Enter the details for this specification</label>
+      <input type="text" id="specDetailInput" placeholder="Provide specification details">
+    </div>
+
+    <div id="additionalSpecPrompt" class="conditional">
+      <label>Are there additional specifications you need to share?</label>
+      <select id="additionalSpecYesNo">
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+    </div>
+
+    <div id="additionalSpecSection" class="conditional">
+      <label>What are the additional required specs?</label>
+      <select id="additionalSpecsSelect">
+        <option>Dimensions (height, width, depth, diameter, etc)</option>
+        <option>Weight or Volume</option>
+        <option>Material Type (plastic, metal, wood, etc)</option>
+        <option>Finish or Color</option>
+        <option>Brand or Manufacturer</option>
+        <option>Model Number</option>
+        <option>Performance Criteria (speed, capacity, wattage)</option>
+        <option>Safety or Compliance Features</option>
+        <option>Compatibility or Fit Requirements</option>
+        <option>Other</option>
+        <option>N/A</option>
+      </select>
+      <div id="additionalSpecDetailSection" class="conditional">
+        <label>Enter the details for this specification</label>
+        <input type="text" placeholder="Provide additional specification details">
+      </div>
+    </div>
+
+    <label>What is it for?</label>
+    <select>
+      <option>Prototyping & Fabrication</option>
+      <option>Design & Accessibility</option>
+      <option>Testing & Validation</option>
+      <option>Functionality Component</option>
+      <option>Display or Demonstration</option>
+      <option>Other</option>
+    </select>
+
+    <label>How many do you need?</label>
+    <input type="number" placeholder="Enter Whole Number">
+
+    <label>What is your max budget?</label>
+    <input type="number" id="budgetInput" placeholder="Enter Whole Dollar Amount">
+
+    <div id="reuseSection" class="conditional">
+      <label>[If budget $100 or more] Will it be in reusable condition when your team is done with it?</label>
+      <select>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Not Sure</option>
+      </select>
+
+      <label>If available to borrow, is that an acceptable option?</label>
+      <select>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Depends on Availability</option>
+      </select>
+    </div>
+
+    <label>Names your preferred vendor or supplier.</label>
+    <input type="text" placeholder="Enter vendor name">
+
+    <label>Provide a link to the item from any vendor.</label>
+    <input type="text" placeholder="Enter item link">
+
     <label>Add any additional information in the space provided</label>
     <textarea rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;" placeholder="Enter any additional notes or context here"></textarea>
 
     <button type="button">Submit Request (placeholder)</button>
   </form>
+
+  <script>
+    const budgetInput = document.getElementById('budgetInput');
+    const reuseSection = document.getElementById('reuseSection');
+    const specsSelect = document.getElementById('specsSelect');
+    const specDetailSection = document.getElementById('specDetailSection');
+    const specDetailInput = document.getElementById('specDetailInput');
+    const additionalSpecPrompt = document.getElementById('additionalSpecPrompt');
+    const additionalSpecYesNo = document.getElementById('additionalSpecYesNo');
+    const additionalSpecSection = document.getElementById('additionalSpecSection');
+    const additionalSpecsSelect = document.getElementById('additionalSpecsSelect');
+    const additionalSpecDetailSection = document.getElementById('additionalSpecDetailSection');
+
+    budgetInput.addEventListener('input', () => {
+      const budget = parseFloat(budgetInput.value);
+      reuseSection.style.display = (!isNaN(budget) && budget >= 100) ? 'block' : 'none';
+    });
+
+    specsSelect.addEventListener('change', () => {
+      specDetailSection.style.display = (specsSelect.value !== 'N/A') ? 'block' : 'none';
+    });
+
+    specDetailInput.addEventListener('input', () => {
+      additionalSpecPrompt.style.display = specDetailInput.value.trim() !== '' ? 'block' : 'none';
+    });
+
+    additionalSpecYesNo.addEventListener('change', () => {
+      additionalSpecSection.style.display = (additionalSpecYesNo.value === 'Yes') ? 'block' : 'none';
+    });
+
+    additionalSpecsSelect.addEventListener('change', () => {
+      additionalSpecDetailSection.style.display = (additionalSpecsSelect.value !== 'N/A') ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>
