@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Design Purchase Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.75rem;
+      width: 100%;
+      font-size: 1rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .conditional {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Senior Design Purchase Request</h1>
+  <form>
+    <label>Select your department</label>
+    <select>
+      <option>MECH</option>
+      <option>CHEM</option>
+      <option>BME</option>
+      <option>CIVE</option>
+      <option>ECE</option>
+    </select>
+
+    <label>Enter your team name</label>
+    <input type="text" placeholder="Enter team name">
+
+    <label>Enter your first and last name</label>
+    <input type="text" placeholder="Enter your full name">
+
+    <label>Add any additional information in the space provided</label>
+    <textarea rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;" placeholder="Enter any additional notes or context here"></textarea>
+
+    <button type="button">Submit Request (placeholder)</button>
+  </form>
+</body>
+</html>
